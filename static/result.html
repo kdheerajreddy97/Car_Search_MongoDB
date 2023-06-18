@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="static/result.css" />
+  <title>Search Results</title>
+</head>
+<body>
+  <h1><centre>Available Cars</centre></h1>
+  <ul>
+    {% for result in results %}
+      <li><a href="/details/{{ loop.index0 }}">{{ result }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <button onclick="goBack()">Go Back</button>
+
+  <script>
+  function goBack() {
+      window.history.back();
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { 
+    background-color: AntiqueWhite; 
+    font-family:Arial, Helvetica, sans-serif;
+    color: #333;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    border-style: solid;
+    border-color: black;
+  }
+
+img { 
+    margin: 0 1em 0 0;
+    border: .1em solid #333;
+    box-shadow: 2px 2px 5px #aaa;
+}
+
+ul {
+    list-style-type: none;
+    padding: 5pt;
+    margin: 0; 
+}
+
+li {
+    list-style-type: none;
+    padding: 2pt;
+    margin: 0; 
+}
+
+
+    </style>
+    <title>Car Details</title>
+</head>
+<body>
+
+    <h2>Car Details</h2>
+
+    <p>Manufacturer: {{ car.manufacturer }}</p>
+    <p>Model:{{ car.model }}</p>
+    <p>Condition: {{ car.condition }}</p>
+    <p>Year: {{ car.year }}</p>
+    <p>Price:{{ car.price }}</p>
+    <p>Odometer: {{ car.odometer }}</p>
+    <p>Transmission: {{ car.transmission }}</p>
+    <p>VIN: {{ car.VIN }}</p>
+    <p>Type: {{ car.type }}</p>
+    <p>Paint Color: {{ car.paint_color }}</p>
+    <img src="{{ car.image_url }}" onerror="this.onerror=null; this.src='http://localhost:8000/static/download.jpeg';" width="400" height="400" />
+    <p>Description: {{ car.description }}</p>
+
+    {% if car.comment %}
+    <p>Comment: {{ car.comment }}</p>
+    {% else %}
+    <p>No comments available.</p>
+    {% endif %}
+
+
+    <form method="post" action="/add_comment/{{ car._id }}">
+        <textarea name="comment" rows="4" cols="50" placeholder="Enter your comment..."></textarea><br>
+        <input type="submit" value="Submit Comment">
+    </form>
+
+    <a href="/thankyou.html">
+        <button>Quit!</button>
+    </a>
+
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+
+</body>
+</html>
