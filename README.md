@@ -4,7 +4,7 @@ Project title: NoSQL Ninjas - Craiglist search using MongoDB and FastAPI
 
 MongoDB Group Project:
 
-Project Description: This application provides the user with the ability to search for cars from the Craiglist database. 
+Project Description: This application provides the user with the ability to search for cars from the Craigslist database. 
                      The user can search for cars based on the Manufacturer or in and around a particular location of 5kms radius.
 
 Team Members:
